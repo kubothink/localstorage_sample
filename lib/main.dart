@@ -53,14 +53,26 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Hello, Hive.'),
       ),
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(user.name),
-            Text(user.age.toString()),
-          ],
-        )
-      ),
+          child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Card(
+              color: Colors.blueGrey[50],
+              shadowColor: Colors.grey,
+              elevation: 10,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(120),
+                child: Text(user.name),
+              )),
+          Text(user.name),
+          Text(
+            user.age.toString(),
+          ),
+        ],
+      )),
     );
   }
 }
